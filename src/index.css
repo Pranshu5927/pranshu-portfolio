@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* ─── Theme tokens ─────────────────────────────────── */
+:root {
+  --bg:          #f4f3ee;
+  --bg-surface:  #eae8e1;
+  --bg-hover:    #e0ddd4;
+  --text:        #1c1917;
+  --text-muted:  #78716c;
+  --text-subtle: #a8a29e;
+  --border:      rgba(0, 0, 0, 0.09);
+  --border-hover:rgba(0, 0, 0, 0.2);
+  --accent:      #6366f1;
+  --accent-soft: rgba(99, 102, 241, 0.12);
+  --accent-text: #4f46e5;
+  --shadow:      0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:   0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+}
+
+html.dark {
+  --bg:          #09090b;
+  --bg-surface:  #111113;
+  --bg-hover:    #1a1a1e;
+  --text:        #f4f3f2;
+  --text-muted:  #71717a;
+  --text-subtle: #52525b;
+  --border:      rgba(255, 255, 255, 0.07);
+  --border-hover:rgba(255, 255, 255, 0.18);
+  --accent:      #818cf8;
+  --accent-soft: rgba(129, 140, 248, 0.12);
+  --accent-text: #a5b4fc;
+  --shadow:      0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:   0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* ─── Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  border: none;
+  min-height: 100vh;
+  display: block;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* ─── Selection ─────────────────────────────────────── */
+::selection { background: var(--accent-soft); color: var(--text); }
+
+/* ─── Animations ────────────────────────────────────── */
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(28px, -44px) scale(1.06); }
+  66%       { transform: translate(-18px, 22px) scale(0.96); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

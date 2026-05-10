@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#09090b"/>
+  <rect width="32" height="32" rx="7" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text
+    x="16"
+    y="21"
+    font-family="ui-monospace, 'Cascadia Code', 'SF Mono', monospace"
+    font-size="12.5"
+    font-weight="700"
+    text-anchor="middle"
+    fill="#818cf8"
+    letter-spacing="-0.5"
+  >PC</text>
+</svg>
