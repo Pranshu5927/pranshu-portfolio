@@ -109,8 +109,8 @@ export default function Home() {
     <PageTransition>
       {/* ── Hero ─────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex flex-col justify-start overflow-hidden"
-        style={{ padding: '0 6vw', paddingTop: '148px', paddingBottom: '80px', background: 'var(--bg)' }}
+        className="relative min-h-screen flex flex-col justify-start overflow-hidden pt-28 md:pt-[148px] pb-16 md:pb-20"
+        style={{ paddingLeft: '6vw', paddingRight: '6vw', background: 'var(--bg)' }}
       >
         {/* Blobs */}
         <div aria-hidden style={{
@@ -193,7 +193,7 @@ export default function Home() {
 
         {/* CTAs */}
         <motion.div
-          className="flex items-center gap-4 z-10"
+          className="flex flex-wrap items-center gap-3 md:gap-4 z-10"
           initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.9, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >

@@ -38,7 +38,7 @@ function InfoTooltip({ text }) {
             className="absolute z-50"
             style={{
               bottom: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)',
-              width: 320, padding: '12px 14px',
+              width: 'min(320px, calc(100vw - 48px))', padding: '12px 14px',
               background: 'var(--bg-surface)', border: '1px solid var(--border)',
               borderRadius: 10, boxShadow: 'var(--shadow-md)', pointerEvents: 'none',
             }}
@@ -150,25 +150,27 @@ function SubTeamTabs({ subTeams }) {
   return (
     <div>
       {/* Tab bar */}
-      <div className="flex gap-1 mb-6 p-1 rounded-xl" style={{ background: 'var(--bg-hover)', width: 'fit-content' }}>
-        {subTeams.map((st, i) => (
-          <button
-            key={st.name}
-            onClick={() => setActive(i)}
-            className="relative px-4 py-2 rounded-lg text-xs font-mono transition-colors duration-200"
-            style={{ color: active === i ? 'var(--text)' : 'var(--text-subtle)' }}
-          >
-            {active === i && (
-              <motion.span
-                layoutId="tab-bg"
-                className="absolute inset-0 rounded-lg"
-                style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)' }}
-                transition={{ type: 'spring', damping: 24, stiffness: 300 }}
-              />
-            )}
-            <span className="relative z-10">{st.name}</span>
-          </button>
-        ))}
+      <div className="overflow-x-auto mb-6">
+        <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'var(--bg-hover)', width: 'fit-content' }}>
+          {subTeams.map((st, i) => (
+            <button
+              key={st.name}
+              onClick={() => setActive(i)}
+              className="relative px-4 py-2 rounded-lg text-xs font-mono transition-colors duration-200 whitespace-nowrap"
+              style={{ color: active === i ? 'var(--text)' : 'var(--text-subtle)' }}
+            >
+              {active === i && (
+                <motion.span
+                  layoutId="tab-bg"
+                  className="absolute inset-0 rounded-lg"
+                  style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)' }}
+                  transition={{ type: 'spring', damping: 24, stiffness: 300 }}
+                />
+              )}
+              <span className="relative z-10">{st.name}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Tab content */}
@@ -304,14 +306,14 @@ export default function Work() {
               {skillGroups.map((g, i) => (
                 <motion.div
                   key={g.label}
-                  className="flex gap-8 md:gap-14 items-baseline pb-5"
+                  className="flex flex-col md:flex-row md:gap-14 pb-5 gap-1"
                   style={{ borderBottom: '1px solid var(--border)' }}
                   initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <span className="w-36 shrink-0 font-mono text-[10px] uppercase tracking-widest pt-0.5"
+                  <span className="md:w-36 md:shrink-0 font-mono text-[10px] uppercase tracking-widest"
                     style={{ color: 'var(--text-subtle)' }}
                   >
                     {g.label}
