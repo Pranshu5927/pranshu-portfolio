@@ -278,8 +278,8 @@ export default function Home() {
             {/* Currently */}
             <BentoCard>
               <CardLabel>Currently</CardLabel>
-              <p className="font-semibold text-sm mb-0.5" style={{ color: 'var(--text)' }}>JP Morgan Chase & Co.</p>
-              <p className="text-xs mb-1" style={{ color: 'var(--accent-text)' }}>Data Science Analyst — FAST Team</p>
+              <p className="font-mono font-semibold text-sm mb-0.5" style={{ color: 'var(--text)' }}>JP Morgan Chase & Co.</p>
+              <p className="font-mono text-xs mb-1" style={{ color: 'var(--accent-text)' }}>Data Science Analyst — FAST Team</p>
               <p className="text-xs" style={{ color: 'var(--text-subtle)' }}>Bengaluru · Jul 2024 – Present</p>
             </BentoCard>
 

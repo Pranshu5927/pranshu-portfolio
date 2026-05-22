@@ -72,7 +72,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <NavLink to="/" className="font-mono text-sm font-bold tracking-tight" style={{ color: 'var(--text)' }}>
-          PC_
+          PC<span className="logo-caret" aria-hidden="true">_</span>
         </NavLink>
 
         {/* Desktop nav — absolutely centered */}
